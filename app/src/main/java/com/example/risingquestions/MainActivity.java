@@ -9,8 +9,20 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private MyAdapter myAdapter;
+    private List<Profile> profiles;
+    private HashMap<List<Profile>, List<Question>> questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +37,13 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        
+        this.profiles = new ArrayList<>();
+        this.questions = new HashMap<>();
+        this.recyclerView = findViewById(R.id.recyclerView);
+        this.myAdapter = new MyAdapter(this, profiles, questions);
+        this.recyclerView.setAdapter(myAdapter);
+        this.layoutManager = new LinearLayoutManager(this);
+        this.recyclerView.setLayoutManager(layoutManager);
     }
 
 }

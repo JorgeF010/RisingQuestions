@@ -16,10 +16,10 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private List<Profile> profiles;
-    private HashMap<Profile, List<Question>> questions;
+    private HashMap<String, List<Question>> questions;
     private Context context;
 
-    public MyAdapter(Context context, List<Profile> profiles, HashMap<Profile, List<Question>> questions) {
+    public MyAdapter(Context context, List<Profile> profiles, HashMap<String, List<Question>> questions) {
         this.context = context;
         this.profiles = profiles;
         this.questions = questions;
@@ -37,14 +37,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         String profileName = this.profiles.get(position).getName();
         String username = this.profiles.get(position).getUsername();
-//        String question = this.questions.get(profileName).
-        holder.question.setText("");
+        String question = this.questions.get(username).get(position).getQuestion();
+        holder.question.setText(question);
         holder.username.setText(username);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return profiles.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

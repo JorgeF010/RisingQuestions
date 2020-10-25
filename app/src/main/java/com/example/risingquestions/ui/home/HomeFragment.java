@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private MyAdapter myAdapter;
     private List<Profile> profiles;
-    private HashMap<Profile, List<Question>> questions;
+    private HashMap<String, List<Question>> questions;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,12 +39,12 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         this.profiles = new ArrayList<>();
         this.questions = new HashMap<>();
-        Profile Jorge = new Profile("Jorge", "Unknown2All");
+        Profile Eli = new Profile("Eli", "Eli123");
         List<Question> JorgeQuestion = new ArrayList<>();
         Question question = new Question("How high is Eli?", 1, 2);
         JorgeQuestion.add(question);
-        this.profiles.add(Jorge);
-        this.questions.put(Jorge, JorgeQuestion);
+        this.profiles.add(Eli);
+        this.questions.put(Eli.getUsername(), JorgeQuestion);
         this.recyclerView = root.findViewById(R.id.recyclerView);
         this.myAdapter = new MyAdapter(root.getContext(), profiles, questions);
         this.recyclerView.setAdapter(myAdapter);

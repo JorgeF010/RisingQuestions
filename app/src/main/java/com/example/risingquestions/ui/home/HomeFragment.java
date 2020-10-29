@@ -43,8 +43,14 @@ public class HomeFragment extends Fragment {
         List<Question> JorgeQuestion = new ArrayList<>();
         Question question = new Question("How high is Eli?", 1, 2);
         JorgeQuestion.add(question);
+        Profile Eli2 = new Profile("Eli2", "Eli1236");
+        List<Question> JorgeQuestion2 = new ArrayList<>();
+        Question question2 = new Question("How high is Eli?", 1, 2);
+        JorgeQuestion2.add(question2);
         this.profiles.add(Eli);
         this.questions.put(Eli.getUsername(), JorgeQuestion);
+        this.profiles.add(Eli2);
+        this.questions.put(Eli2.getUsername(), JorgeQuestion2);
         this.recyclerView = root.findViewById(R.id.recyclerView);
         this.myAdapter = new MyAdapter(root.getContext(), profiles, questions);
         this.recyclerView.setAdapter(myAdapter);

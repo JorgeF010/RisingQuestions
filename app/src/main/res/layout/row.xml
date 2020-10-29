@@ -22,22 +22,23 @@
                 android:id="@+id/questionText"
                 android:layout_width="392dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="5dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/upVoteButton"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/usernameText"
-                app:layout_constraintVertical_bias="0.367" />
+                app:layout_constraintTop_toBottomOf="@+id/usernameText" />
 
             <TextView
                 android:id="@+id/usernameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="343dp"
+                android:layout_marginEnd="337dp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,28 +46,27 @@
 
             <Button
                 android:id="@+id/upVoteButton"
-                android:layout_width="24dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="319dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="21dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="361dp"
                 android:layout_marginBottom="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/downVoteButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/questionText"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/downVoteButton"
-                android:layout_width="24dp"
-                android:layout_height="30dp"
+                android:layout_width="21dp"
+                android:layout_height="26dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/upVoteButton"
-                app:layout_constraintTop_toBottomOf="@+id/questionText" />
+                app:layout_constraintTop_toBottomOf="@+id/questionText"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

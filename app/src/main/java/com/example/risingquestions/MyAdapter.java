@@ -37,7 +37,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         String profileName = this.profiles.get(position).getName();
         String username = this.profiles.get(position).getUsername();
-        String question = this.questions.get(username).get(position).getQuestion();
+        // I need to figure out a way to get the correct question and not the 0 index
+        String question = this.questions.get(username).get(0).getQuestion();
         holder.question.setText(question);
         holder.username.setText(username);
     }
